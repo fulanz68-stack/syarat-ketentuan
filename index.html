@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syarat & Ketentuan - Layanan Profesional LinkedIn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --primary: #ffffff;
+            --secondary: #f8f9fa;
+            --accent: #2563eb;
+            --accent-dark: #1e40af;
+            --text: #1f2937;
+            --text-secondary: #6b7280;
+            --border: #e5e7eb;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --success: #059669;
+            --warning: #d97706;
+            --info: #0369a1;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.5;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem 1.5rem;
+        }
+
+        .content-card {
+            background: var(--primary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ SECTION STYLES - MINIMALIS ACCORDION */
+        .faq-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-section h2 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-section h2 i {
+            font-size: 0.9rem;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-color: var(--accent);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+        }
+
+        .faq-question {
+            background: white;
+            padding: 0.8rem 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--secondary);
+        }
+
+        .faq-question-text {
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .faq-question-text i {
+            color: var(--accent);
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question-text i {
+            transform: rotate(90deg);
+        }
+
+        .faq-toggle {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            background: var(--secondary);
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0.8rem 1rem;
+            max-height: 200px;
+        }
+
+        .faq-answer-content {
+            color: var(--text-secondary);
+        }
+
+        .faq-answer .highlight-link {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .faq-answer .highlight-link:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h2 i {
+            font-size: 0.9rem;
+        }
+
+        .section h3 {
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 1rem 0 0.6rem;
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 0.6rem;
+            line-height: 1.4;
+            font-size: 0.85rem;
+        }
+
+        .section ul {
+            padding-left: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .section li {
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+            line-height: 1.4;
+            font-size: 0.85rem;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .highlight-success {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .highlight-warning {
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .highlight-info {
+            color: var(--info);
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: var(--secondary);
+            border-left: 3px solid var(--accent);
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin: 0.8rem 0;
+            font-size: 0.85rem;
+        }
+
+        .warning-box {
+            background: #fffbeb;
+            border-left: 3px solid var(--warning);
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin: 0.8rem 0;
+            font-size: 0.85rem;
+        }
+
+        .privacy-box {
+            background: #f0f9ff;
+            border-left: 3px solid var(--accent);
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin: 0.8rem 0;
+            font-size: 0.85rem;
+        }
+
+        .security-box {
+            background: #f0fdf4;
+            border-left: 3px solid var(--success);
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin: 0.8rem 0;
+            font-size: 0.85rem;
+        }
+
+        /* LAYOUT KRITERIA AKUN - KIRI KANAN KECIL */
+        .criteria-simple {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .criteria-card-simple {
+            background: white;
+            border-radius: 8px;
+            padding: 1.2rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: transform 0.2s ease;
+            box-shadow: 0 2px 6px var(--shadow);
+        }
+
+        .criteria-card-simple:hover {
+            transform: translateY(-2px);
+        }
+
+        .criteria-icon-simple {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin: 0 auto 0.8rem;
+        }
+
+        .criteria-value-simple {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .criteria-card-simple h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .criteria-card-simple p {
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .solution-box {
+            background: #f0fdf4;
+            border-left: 3px solid var(--success);
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin: 0.8rem 0;
+            font-size: 0.85rem;
+        }
+
+        .tutorial-steps {
+            background: white;
+            border-radius: 6px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            margin: 0.8rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: var(--text);
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .step-content p {
+            margin-bottom: 0.3rem;
+            font-size: 0.8rem;
+        }
+
+        .step-image {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            margin-top: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        .profiles-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.2rem;
+            box-shadow: 0 2px 6px var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .profile-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .profile-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.2rem;
+        }
+
+        .profile-info .title {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.1rem;
+            font-size: 0.8rem;
+        }
+
+        .profile-info .location {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
+        .profile-details {
+            margin-bottom: 1rem;
+        }
+
+        .profile-details h5 {
+            color: var(--text);
+            margin-bottom: 0.4rem;
+            font-size: 0.85rem;
+        }
+
+        .profile-details p {
+            font-size: 0.75rem;
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
+        }
+
+        .profile-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0.5rem;
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+
+        .stat-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .example-card {
+            background: var(--secondary);
+            border-radius: 6px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease;
+        }
+
+        .example-card:hover {
+            transform: translateY(-1px);
+        }
+
+        .example-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .example-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .example-title {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .admin-contact {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .admin-contact h2 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: none;
+        }
+
+        .admin-contact p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.85rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--accent);
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 0.8rem;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-button i {
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            padding: 1rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        /* NEW STYLES FOR ADDED FEATURES */
+        .status-check-section {
+            background: #f0f9ff;
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .status-check-section h3 {
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .status-check-section p {
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .status-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 0.85rem;
+        }
+
+        .status-button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .payment-details {
+            background: white;
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        .payment-details h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .payment-card {
+            background: var(--secondary);
+            border-radius: 6px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .payment-card h4 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .payment-card .amount {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-card p {
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .payment-card .bonus {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .payment-card .guarantee {
+            background: #fffbeb;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            border-left: 3px solid var(--warning);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.2rem 1rem;
+            }
+            
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .content-card {
+                padding: 1.2rem;
+            }
+            
+            .criteria-simple,
+            .profiles-showcase,
+            .example-grid,
+            .payment-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-button {
+                width: 100%;
+                max-width: 200px;
+                justify-content: center;
+            }
+
+            .step-image {
+                max-width: 150px;
+            }
+        }
+
+        .compact-section {
+            margin-bottom: 1rem;
+        }
+
+        .compact-section:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Syarat & Ketentuan Profesional</h1>
+        <p>Layanan Sewa Akun LinkedIn untuk Pemasaran Global</p>
+    </header>
+
+    <div class="container">
+        <div class="content-card">
+            <!-- BAGIAN FAQ MINIMALIS DENGAN ACCORDION -->
+            <div class="faq-section">
+                <h2><i class="fas fa-question-circle"></i> Informasi yang Sering Ditanyakan</h2>
+                
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-question-text">
+                                <i class="fas fa-chevron-right"></i>
+                                Untuk apa akun LinkedIn saya?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yaitu untuk kebutuhan pemasaran global, digital marketing serta menaikan engagement perusahaan, seperti jumlah like/view/comment.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-question-text">
+                                <i class="fas fa-chevron-right"></i>
+                                Apakah Aman?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Iya aman, karna selama proses sewa, foto profil dan info personal, akan di Sesuaikan dengan profil negara client.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-question-text">
+                                <i class="fas fa-chevron-right"></i>
+                                Bagaimana cara menyewakan account LinkedIn?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Kunjungi official Web <a href="https://rentalinkdln.vercel.app/" class="highlight-link" target="_blank">Klik Disini</a> (menuju ke link rental-akun.pages.dev) klik Tab Setor Akun, sesuai jadwal yang di tentukan, akan di arahkan ke WhatsApp client dengan nomer Amerika.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-question-text">
+                                <i class="fas fa-chevron-right"></i>
+                                Berapa Fee yang kita terima?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Akan di bayar:
+                                <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
+                                    <li><span class="highlight">Rp 192.000</span> untuk New Acc normal</li>
+                                    <li><span class="highlight">Rp 192.000</span> untuk New Acc Restric</li>
+                                    <li><span class="highlight">Rp 80.0000</span> Bonus Un-Restrict</li>
+                                </ul>
+                                <p style="margin-top: 0.5rem;"><span class="highlight-success">BONUS:</span> Akun yang baru pertama kali di sewakan di grup 7777, jika terkena Restrict akan tetap mendapat Full payment! Rp 192.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="faq-question-text">
+                                <i class="fas fa-chevron-right"></i>
+                                Kapan akan di bayar?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Setiap <span class="highlight">Kamis - Jum'at</span>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CEK STATUS AKUN -->
+            <div class="status-check-section">
+                <h3><i class="fas fa-search"></i> Cek Kondisi Akun Anda</h3>
+                <p>Anda bisa mengecek status dan kondisi akun, apakah Running atau Restrict.</p>
+                <a href="https://cek8800.vercel.app/" class="status-button" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    Check Data
+                </a>
+                <div style="margin-top: 1rem; font-size: 0.8rem;">
+                    <p><span class="highlight-success">Running</span> = berjalan dengan normal</p>
+                    <p><span class="highlight-warning">Restrict</span> = berhenti Sewa</p>
+                    <p><span class="highlight-info">Unrestrict</span> = Lanjut dapatkan Bonus 80 ribu</p>
+                    <p><span class="highlight">Old acc</span> = berjalan dengan normal</p>
+                </div>
+            </div>
+
+            <!-- DETAIL PEMBAYARAN -->
+            <div class="payment-details">
+                <h3><i class="fas fa-money-bill-wave"></i> Detail Pembayaran</h3>
+                <p>Berikut adalah rincian pembayaran untuk berbagai kondisi akun:</p>
+                
+                <div class="payment-grid">
+                    <div class="payment-card">
+                        <h4>New Acc Normal</h4>
+                        <div class="amount">Rp 192.000</div>
+                        <p>Untuk akun baru yang berjalan normal tanpa kendala</p>
+                    </div>
+                    
+                    <div class="payment-card">
+                        <h4>New Acc Restrict</h4>
+                        <div class="amount">Rp 192.000</div>
+                        <p>Untuk akun baru yang terkena restrict</p>
+                        <div class="guarantee">
+                            <span class="bonus">BONUS:</span> Akun pertama kali di grup 7777 tetap dapat full payment!
+                        </div>
+                    </div>
+                    
+                    <div class="payment-card">
+                        <h4>Un-Restrict Success</h4>
+                        <div class="amount">Rp 275.000</div>
+                        <p>Untuk akun yang berhasil di-unrestrict</p>
+                        <p class="bonus">Bonus 80 ribu dari harga normal</p>
+                    </div>
+                </div>
+                
+                <div class="info-box" style="margin-top: 1rem;">
+                    <p><span class="highlight">Jadwal Pembayaran:</span> Setiap <span class="highlight">Kamis - Jum'at</span>.</p>
+                </div>
+            </div>
+
+            <!-- KRITERIA AKUN YANG DIPERLUKAN -->
+            <div class="section compact-section">
+                <h2><i class="fas fa-info-circle"></i> Kriteria Akun yang Diperlukan</h2>
+                
+                <div class="info-box">
+                    <p>Untuk memastikan kualitas layanan yang optimal, akun LinkedIn yang akan disewa harus memenuhi kriteria berikut:</p>
+                </div>
+
+                <div class="criteria-simple">
+                    <div class="criteria-card-simple">
+                        <div class="criteria-icon-simple">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <span class="criteria-value-simple">1 Tahun</span>
+                        <h4>Usia Akun Minimal</h4>
+                        <p>Akun harus dibuat minimal 1 tahun yang lalu untuk memastikan kredibilitas dan menghindari flagging sistem LinkedIn.</p>
+                    </div>
+                    
+                    <div class="criteria-card-simple">
+                        <div class="criteria-icon-simple">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <span class="criteria-value-simple">20+</span>
+                        <h4>Minimal Koneksi</h4>
+                        <p>Memiliki minimal 20 koneksi untuk memulai strategi pemasaran yang efektif dan terlihat natural di platform.</p>
+                    </div>
+                </div>
+
+                <div class="solution-box">
+                    <p><span class="highlight-success">SOLUSI:</span> Jika koneksi Anda di bawah 20, Anda bisa bergabung dengan <span class="highlight">grup khusus</span> untuk menambah koneksi. Hubungi Admin untuk informasi lebih lanjut.</p>
+                </div>
+
+                <h3><i class="fas fa-question-circle"></i> Cara Mengecek Usia Akun LinkedIn</h3>
+                
+                <div class="tutorial-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Via Aplikasi LinkedIn Mobile</h4>
+                            <p>• Buka aplikasi LinkedIn di smartphone</p>
+                            <p>• Klik pada foto profil Anda</p>
+                            <p>• Klik titik 3 (tiga) di bagian bawah foto profil</p>
+                            <p>• Pilih "Tentang Profil"</p>
+                            <p>• Lihat tanggal pembuatan akun</p>
+                            <div style="text-align: center; margin-top: 0.5rem;">
+                                <img src="./images/Age.png" alt="Cek usia akun di aplikasi LinkedIn" class="step-image">
+                                <div class="image-caption">Gambar 1: Menu Tentang Profil di Aplikasi LinkedIn</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Via Browser Desktop</h4>
+                            <p>• Buka LinkedIn.com di browser desktop</p>
+                            <p>• Klik pada foto profil Anda di pojok kanan atas</p>
+                            <p>• Pilih "Lihat Profil" dari dropdown menu</p>
+                            <p>• Scroll ke bagian bawah halaman profil</p>
+                            <p>• Cari informasi "LinkedIn Member since [bulan/tahun]"</p>
+                            <div style="text-align: center; margin-top: 0.5rem;">
+                                <img src="./images/Age-browser.png" alt="Cek usia akun di browser desktop" class="step-image">
+                                <div class="image-caption">Gambar 2: Informasi Member Since di LinkedIn Desktop</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><span class="highlight-warning">PERHATIAN:</span> Pastikan akun Anda memenuhi kedua kriteria di atas sebelum melanjutkan proses sewa. Akun yang tidak memenuhi syarat tidak dapat diproses.</p>
+                </div>
+            </div>
+
+            <!-- CONTOH PROFIL PROFESIONAL US -->
+            <div class="section compact-section">
+                <h2><i class="fas fa-user-tie"></i> Contoh Profil Profesional US</h2>
+                <p>Berikut adalah contoh profil profesional dari Amerika Serikat yang kami sediakan untuk klien:</p>
+
+                <div class="profiles-showcase">
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" alt="Michael Reynolds" class="profile-avatar">
+                            <div class="profile-info">
+                                <h4>Michael Reynolds</h4>
+                                <div class="title">Senior SaaS Consultant</div>
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    San Francisco, California
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-details">
+                            <h5>Spesialisasi</h5>
+                            <p>Enterprise software implementation, cloud solutions, and digital transformation for Fortune 500 companies.</p>
+                            
+                            <h5>Pengalaman</h5>
+                            <p>• Ex-Salesforce Solution Architect (4 years)<br>
+                               • Microsoft Certified Azure Expert<br>
+                               • 50+ enterprise implementations</p>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">15K+</span>
+                                <span class="stat-label">Connections</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">92%</span>
+                                <span class="stat-label">Response Rate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" alt="Sarah Johnson" class="profile-avatar">
+                            <div class="profile-info">
+                                <h4>Sarah Johnson</h4>
+                                <div class="title">Fintech Strategy Advisor</div>
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    New York City, New York
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-details">
+                            <h5>Spesialisasi</h5>
+                            <p>Digital banking transformation, payment systems, and regulatory compliance for financial institutions.</p>
+                            
+                            <h5>Pengalaman</h5>
+                            <p>• Former VP at JPMorgan Chase (6 years)<br>
+                               • MIT Sloan MBA Graduate<br>
+                               • Board Member - Fintech Association</p>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">12K+</span>
+                                <span class="stat-label">Connections</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">88%</span>
+                                <span class="stat-label">Response Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTOH STRATEGI PEMASARAN -->
+            <div class="section compact-section">
+                <h2><i class="fas fa-chart-line"></i> Contoh Strategi Pemasaran</h2>
+                <p>Berikut contoh nyata bagaimana klien kami menggunakan profil internasional untuk memasarkan berbagai produk dan jasa:</p>
+
+                <div class="example-grid">
+                    <div class="example-card">
+                        <div class="example-header">
+                            <div class="example-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="example-title">SaaS Enterprise</div>
+                        </div>
+                        <p><span class="highlight">Profil:</span> Michael Reynolds - Senior SaaS Consultant (San Francisco)</p>
+                        <p><span class="highlight">Produk:</span> Project Management Software untuk perusahaan 500+ employees</p>
+                        <p><span class="highlight">Target:</span> C-level executives di perusahaan teknologi</p>
+                        <p><span class="highlight-success">Hasil:</span> 45 qualified demos dalam 3 bulan</p>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="example-header">
+                            <div class="example-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div class="example-title">Konsultan Fintech</div>
+                        </div>
+                        <p><span class="highlight">Profil:</span> Sarah Johnson - Fintech Advisor (New York)</p>
+                        <p><span class="highlight">Layanan:</span> Implementasi payment system untuk bank digital</p>
+                        <p><span class="highlight">Target:</span> Head of Digital Transformation di bank tradisional</p>
+                        <p><span class="highlight-success">Hasil:</span> 3 kontrak enterprise dalam 2 bulan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DETAIL OPERASIONAL LAYANAN -->
+            <div class="section compact-section">
+                <h2><i class="fas fa-cogs"></i> Detail Operasional Layanan</h2>
+                
+                <div class="info-box">
+                    <p>Dalam operasional layanan sewa akun LinkedIn, ada beberapa hal yang perlu Anda ketahui terkait kemungkinan terjadinya restricted account:</p>
+                </div>
+
+                <h3><i class="fas fa-exclamation-triangle"></i> Kemungkinan Restricted Account</h3>
+                
+                <div class="warning-box">
+                    <p><span class="highlight-warning">PENTING:</span> Dalam beberapa kasus, akun LinkedIn mungkin mengalami <span class="highlight">restricted access</span> atau pembatasan sementara. Hal ini wajar terjadi dan dapat diatasi.</p>
+                </div>
+
+                <div class="criteria-simple">
+                    <div class="criteria-card-simple">
+                        <div class="criteria-icon-simple">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Akses dari Perangkat Berbeda</h4>
+                        <p>LinkedIn mungkin membatasi akun yang diakses dari dua perangkat berbeda secara bersamaan</p>
+                    </div>
+                    
+                    <div class="criteria-card-simple">
+                        <div class="criteria-icon-simple">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <h4>Perubahan Profil Mendadak</h4>
+                        <p>Perubahan informasi profil yang signifikan dapat memicu sistem keamanan LinkedIn</p>
+                    </div>
+                </div>
+
+                <h3><i class="fas fa-shield-alt"></i> Solusi untuk Restricted Account</h3>
+                
+                <div class="tutorial-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Verifikasi Identitas</h4>
+                            <p>• LinkedIn akan meminta verifikasi identitas melalui email atau SMS</p>
+                            <p>• Proses verifikasi biasanya memakan waktu 24-48 jam</p>
+                            <p>• Pastikan informasi kontak akun Anda valid dan aktif</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Dukungan Grup Khusus</h4>
+                            <p>• Kami menyediakan grup WhatsApp khusus untuk membantu masalah restricted account</p>
+                            <p>• Tim support akan memberikan panduan langkah demi langkah</p>
+                            <p>• Pengalaman kolektif membantu menyelesaikan masalah lebih cepat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-box">
+                    <p><span class="highlight-success">TENANG:</span> Restricted account adalah hal yang wajar dalam operasional pemasaran LinkedIn. Lebih dari 80% kasus dapat diselesaikan dalam waktu 48 jam dengan verifikasi identitas yang tepat.</p>
+                </div>
+            </div>
+
+            <!-- PERSETUJUAN LAYANAN -->
+            <div class="section compact-section">
+                <h2><i class="fas fa-handshake"></i> Persetujuan Layanan</h2>
+                <p>Dengan menggunakan layanan ini, Anda menyetujui:</p>
+                
+                <ul>
+                    <li>Akun LinkedIn Anda dibuat minimal 1 tahun yang lalu</li>
+                    <li>Memiliki minimal 20 koneksi LinkedIn</li>
+                    <li>Penyesuaian lengkap profil selama masa sewa</li>
+                    <li>Penggunaan identitas marketing yang sesuai negara target</li>
+                    <li>Semua ketentuan operasional layanan</li>
+                </ul>
+                
+                <div class="info-box">
+                    <p><span class="highlight">Keputusan di Tangan Anda:</span> Pastikan akun Anda memenuhi syarat sebelum melanjutkan. Untuk pertanyaan tentang kriteria akun, hubungi tim support kami.</p>
+                </div>
+            </div>
+
+            <!-- KEAMANAN DAN PRIVASI -->
+            <div class="section compact-section">
+                <h2><i class="fas fa-shield-alt"></i> Keamanan dan Privasi</h2>
+                
+                <div class="security-box">
+                    <p><span class="highlight-success">JAMINAN KEAMANAN:</span> Kami memprioritaskan keamanan dan privasi data Anda dengan langkah-langkah berikut:</p>
+                </div>
+
+                <div class="criteria-simple">
+                    <div class="criteria-card-simple">
+                        <div class="criteria-icon-simple">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4>Enkripsi Data</h4>
+                        <p>Semua informasi akun dienkripsi dan disimpan dengan protokol keamanan tingkat tinggi</p>
+                    </div>
+                    
+                    <div class="criteria-card-simple">
+                        <div class="criteria-icon-simple">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4>Privasi Terjaga</h4>
+                        <p>Informasi pribadi Anda tidak akan dibagikan kepada pihak ketiga tanpa izin</p>
+                    </div>
+                </div>
+
+                <h3><i class="fas fa-check-circle"></i> Komitmen Keamanan Kami</h3>
+                
+                <div class="tutorial-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Transparansi Operasional</h4>
+                            <p>• Anda akan menerima laporan rutin tentang aktivitas yang dilakukan pada akun LinkedIn Anda</p>
+                            <p>• Akses terbatas hanya untuk keperluan marketing yang disetujui</p>
+                            <p>• Tidak ada perubahan pada informasi login atau data sensitif lainnya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Perlindungan Akun</h4>
+                            <p>• Tidak ada aktivitas yang melanggar kebijakan LinkedIn</p>
+                            <p>• Strategi pemasaran yang etis dan sesuai pedoman platform</p>
+                            <p>• Monitoring 24/7 untuk mendeteksi aktivitas mencurigakan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="privacy-box">
+                    <p><span class="highlight-info">KEAMANAN TERJAMIN:</span> Kami telah membantu lebih dari 500 klien dengan tingkat kepuasan 98% dan tidak pernah terjadi insiden keamanan yang merugikan klien.</p>
+                </div>
+            </div>
+
+            <!-- ADMIN CONTACT -->
+            <div class="admin-contact">
+                <h2><i class="fas fa-headset"></i> Hubungi Admin Kami</h2>
+                <p>Jika Anda memiliki pertanyaan atau membutuhkan bantuan terkait layanan kami, jangan ragu untuk menghubungi admin melalui WhatsApp atau bergabung dengan grup komunitas kami.</p>
+                
+                <div class="contact-buttons">
+                    <a href="https://wa.me/6287722495525" class="contact-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat Admin via WhatsApp
+                    </a>
+                    
+                    <a href="https://chat.whatsapp.com/JRJt2Ngw7G9Fx9yNoMCUfB?mode=ac_t" class="contact-button" target="_blank">
+                        <i class="fas fa-users"></i>
+                        Bergabung dengan Grup WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2023 LinkedIn Professional Marketing Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript untuk FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
